@@ -21,7 +21,7 @@ let NewsItem = ({loading, news }) =>
         // console.log(JSON.stringify(data.name));
         return (
           <li>
-            Source : {JSON.stringify(data.author)}
+            Author : {JSON.stringify(data.author)}
             <br />
             Discription : {JSON.stringify(data.description)}
             <br />  <br /> 
