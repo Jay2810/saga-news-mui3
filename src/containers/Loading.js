@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 let Laoading = ({ loading }) => (
@@ -7,7 +8,7 @@ let Laoading = ({ loading }) => (
   loading ?
     <div style={{ textAlign: 'center' }}>
       
-      <h1>LOADING</h1>
+      <CircularProgress disableShrink style={{marginTop:"20%"}}/>
     </div> :
     null
 );
