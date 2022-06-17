@@ -1,6 +1,7 @@
-export const getNewss = (category,country) => ({
+export const getNewss = (category,country,query) => ({
   type: 'GET_NEWS',
   category: category,
-  country:country
+  country:country,
+  query:query
 });
 

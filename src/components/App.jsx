@@ -14,7 +14,7 @@ let App = () => (
                 {pageLanguage: 'en'},'google_translate_element')
         } 
     </script> */}
-    <ButtonAppBar/>
+    <ButtonAppBar />
     {/* <Button /> */}
     <Buttonmui1/>
     <Loading />

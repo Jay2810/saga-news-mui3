@@ -8,8 +8,6 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
-import { display } from "@mui/system";
-import CircularUnderLoad from "./circleload"
 // function display(news){
 //   console.log("AAAAA",news);
 //   const listitem = news.map( data => {
@@ -29,17 +27,17 @@ let NewsItem = ({ loading, news }) =>
       <br />{" "}
       <Grid
         container
-        spacing={3}
+        spacing={1}
         direction="row"
         justify="flex-start"
         alignItems="flex-start"
       >
         {news.map((data) => {
           // console.log(JSON.stringify(data.name));
-          console.log(data.urlToImage);
+          // console.log(data.urlToImage);
           return (
             <Grid md={3} key={data.title} style={{ listStyleType: "none" }}>
-              <Card sx={{margin:"35px"}}>
+              <Card sx={{margin:"15px"}} height="600px">
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -47,7 +45,7 @@ let NewsItem = ({ loading, news }) =>
                     image={data.urlToImage}
                     alt="news"
                   />
-                  <CardContent>
+                  <CardContent sx={{height:"210px",contentVisibility:"auto"}}>
                     <Typography gutterBottom variant="h6" component="div">
                       {data.source.name}
                     </Typography>
@@ -57,10 +55,11 @@ let NewsItem = ({ loading, news }) =>
                     <br />
                     <Divider />
                     <br />
+                
                     <Typography variant="body4" color="text.secondary">
                       {data.description}
-                    </Typography>
-                  </CardContent>
+                    </Typography><br />
+                          </CardContent>
                 </CardActionArea>
                 <CardActions>
                   <Button
@@ -75,7 +74,7 @@ let NewsItem = ({ loading, news }) =>
                   </Button>
                 </CardActions>
               </Card>
-              <br /> <br /> <br />
+              <br /> 
             </Grid>
           );
         })}
