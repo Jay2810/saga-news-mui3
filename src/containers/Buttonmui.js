@@ -21,7 +21,7 @@ export default function ButtonMui() {
   const handleCountry = (event) => {
     setCountry(event.target.value);
   };
-  
+
   useEffect(() => {
     dispatch(getNews(category, country));
   }, [category, country]);
@@ -89,4 +89,3 @@ export default function ButtonMui() {
     </div>
   );
 }
-

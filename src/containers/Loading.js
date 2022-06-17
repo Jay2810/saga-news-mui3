@@ -1,28 +1,18 @@
-import React from 'react';
-import { connect } from 'react-redux'
-import CircularProgress from '@mui/material/CircularProgress';
+import React from "react";
+import { connect } from "react-redux";
+import CircularProgress from "@mui/material/CircularProgress";
 
-
-let Laoading = ({ loading }) => (
-
-  loading ?
-    <div style={{ textAlign: 'center' }}>
-      
-      <CircularProgress disableShrink style={{marginTop:"20%"}}/>
-    </div> :
-    null
-);
+let Laoading = ({ loading }) =>
+  loading ? (
+    <div style={{ textAlign: "center" }}>
+      <CircularProgress disableShrink style={{ marginTop: "20%" }} />
+    </div>
+  ) : null;
 
 const mapStateToProps = (state) => ({
-  loading: state.loading
-})
+  loading: state.loading,
+});
 
-Laoading = connect(
-  mapStateToProps,
-  null
-)(Laoading)
-
+Laoading = connect(mapStateToProps, null)(Laoading);
 
 export default Laoading;
-
-

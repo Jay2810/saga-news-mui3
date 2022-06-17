@@ -25,7 +25,7 @@ let NewsItem = ({ loading, news }) =>
         {news.map((data) => {
           return (
             <Grid md={3} key={data.title} style={{ listStyleType: "none" }}>
-              <Card sx={{margin:"15px"}} height="600px">
+              <Card sx={{ margin: "15px" }} height="600px">
                 <CardActionArea>
                   <CardMedia
                     component="img"
@@ -33,7 +33,9 @@ let NewsItem = ({ loading, news }) =>
                     image={data.urlToImage}
                     alt="news"
                   />
-                  <CardContent sx={{height:"210px",contentVisibility:"auto"}}>
+                  <CardContent
+                    sx={{ height: "210px", contentVisibility: "auto" }}
+                  >
                     <Typography gutterBottom variant="h6" component="div">
                       {data.source.name}
                     </Typography>
@@ -43,11 +45,12 @@ let NewsItem = ({ loading, news }) =>
                     <br />
                     <Divider />
                     <br />
-                
+
                     <Typography variant="body4" color="text.secondary">
                       {data.description}
-                    </Typography><br />
-                          </CardContent>
+                    </Typography>
+                    <br />
+                  </CardContent>
                 </CardActionArea>
                 <CardActions>
                   <Button
@@ -62,7 +65,7 @@ let NewsItem = ({ loading, news }) =>
                   </Button>
                 </CardActions>
               </Card>
-              <br /> 
+              <br />
             </Grid>
           );
         })}
