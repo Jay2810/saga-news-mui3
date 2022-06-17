@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { getNewss } from "../actions";
+import { getNews } from "../actions";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
-import { categoriesarr, countriesarr } from "../static/data";
+import { categoriesArr, countriesArr } from "../static/data";
 import { MenuItem } from "@mui/material";
 const lodash = require("lodash");
 
-export default function Buttonmui() {
+export default function ButtonMui() {
   const dispatch = useDispatch();
   const [category, setCategory] = useState("");
   const [country, setCountry] = useState("");
@@ -21,8 +21,9 @@ export default function Buttonmui() {
   const handleCountry = (event) => {
     setCountry(event.target.value);
   };
+  
   useEffect(() => {
-    dispatch(getNewss(category, country));
+    dispatch(getNews(category, country));
   }, [category, country]);
 
   const handleTop = (event) => {
@@ -40,7 +41,7 @@ export default function Buttonmui() {
           label="Category"
           onChange={handleCategory}
         >
-          {categoriesarr.map((cat) => {
+          {categoriesArr.map((cat) => {
             return (
               <MenuItem key={cat.name} value={cat.name}>
                 {cat.name}
@@ -59,7 +60,7 @@ export default function Buttonmui() {
           label="Category"
           onChange={handleCountry}
         >
-          {countriesarr.map((con) => {
+          {countriesArr.map((con) => {
             return (
               <MenuItem key={con.code} value={con.code}>
                 {con.name}
@@ -89,5 +90,3 @@ export default function Buttonmui() {
   );
 }
 
-// export default connect(null, mapDispatchToProps)(Buttonmui);
-// exprot default Buttonmui;

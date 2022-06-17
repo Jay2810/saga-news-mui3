@@ -2,17 +2,15 @@ import { put, takeLatest, all } from "redux-saga/effects";
 
 function* fetchNews(data) {
   console.log("saga", data);
-  // category = category.category
-  // const country = category.country
-  // console.log("cat ",category.category,country.country,"cate");
+
+  var apiKey = '98ca664fea53405da9ed702bcd23a217'
   if (data.query) {
-    var url = `https://newsapi.org/v2/everything?q=${data.query}&apiKey=d68b28a3b6c64646b9443bffbe4be41d`
+    var url = `https://newsapi.org/v2/everything?q=${data.query}&apiKey=${apiKey}`
   }
   else{
-    var url = `https://newsapi.org/v2/top-headlines?category=${data.category}&country=${data.country}&apiKey=d68b28a3b6c64646b9443bffbe4be41d`;
+     url = `https://newsapi.org/v2/top-headlines?category=${data.category}&country=${data.country}&apiKey=${apiKey}`;
   }
   console.log(url);
-  // setTimeout(() => {}, 2000);
   const json = yield fetch(url).then((response) => response.json());
 
   yield put({ type: "NEWS_RECEIVED", json: json.articles });
@@ -23,6 +21,5 @@ function* actionWatcher() {
 }
 
 export default function* rootSaga() {
-  // yield all([actionWatcher()]);
-  yield takeLatest("GET_NEWS", fetchNews);
+  yield all([actionWatcher()]);
 }

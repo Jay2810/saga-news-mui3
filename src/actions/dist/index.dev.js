@@ -3,9 +3,9 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getNewss = void 0;
+exports.getNews = void 0;
 
-var getNewss = function getNewss(category, country, query) {
+var getNews = function getNews(category, country, query) {
   return {
     type: 'GET_NEWS',
     category: category,
@@ -14,4 +14,4 @@ var getNewss = function getNewss(category, country, query) {
   };
 };
 
-exports.getNewss = getNewss;
+exports.getNews = getNews;

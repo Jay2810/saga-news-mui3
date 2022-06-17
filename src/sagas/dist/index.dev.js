@@ -23,10 +23,7 @@ function fetchNews(data) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          console.log("saga", data); // category = category.category
-          // const country = category.country
-          // console.log("cat ",category.category,country.country,"cate");
-
+          console.log("saga", data); 
           if (data.query) {
             url = "https://newsapi.org/v2/everything?q=".concat(data.query, "&apiKey=d68b28a3b6c64646b9443bffbe4be41d");
           } else {
@@ -78,7 +75,7 @@ function rootSaga() {
       switch (_context3.prev = _context3.next) {
         case 0:
           _context3.next = 2;
-          return (0, _effects.takeLatest)("GET_NEWS", fetchNews);
+          return (0, _effects.all)([actionWatcher()]);
 
         case 2:
         case "end":

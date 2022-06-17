@@ -6,18 +6,8 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import Divider from "@mui/material/Divider";
-import Stack from "@mui/material/Stack";
 import Grid from "@mui/material/Grid";
-// function display(news){
-//   console.log("AAAAA",news);
-//   const listitem = news.map( data => {
-//         <li>{data.name}</li>
-//         console.log("data",data.name);
-//       }
-//       )
-//       console.log("BBBBBBB",listitem);
-// return listitem
-// }
+
 let NewsItem = ({ loading, news }) =>
   loading ? null : news ? (
     <div>
@@ -33,8 +23,6 @@ let NewsItem = ({ loading, news }) =>
         alignItems="flex-start"
       >
         {news.map((data) => {
-          // console.log(JSON.stringify(data.name));
-          // console.log(data.urlToImage);
           return (
             <Grid md={3} key={data.title} style={{ listStyleType: "none" }}>
               <Card sx={{margin:"15px"}} height="600px">

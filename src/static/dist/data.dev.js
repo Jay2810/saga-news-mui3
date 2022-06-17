@@ -3,8 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.countriesarr = exports.categoriesarr = void 0;
-var categoriesarr = [{
+exports.countriesArr = exports.categoriesArr = void 0;
+var categoriesArr = [{
   name: "Health"
 }, {
   name: "Business"
@@ -13,8 +13,8 @@ var categoriesarr = [{
 }, {
   name: "Science"
 }];
-exports.categoriesarr = categoriesarr;
-var countriesarr = [{
+exports.categoriesArr = categoriesArr;
+var countriesArr = [{
   name: "India",
   code: "in"
 }, {
@@ -27,4 +27,4 @@ var countriesarr = [{
   name: "France",
   code: "fr"
 }];
-exports.countriesarr = countriesarr;
+exports.countriesArr = countriesArr;
