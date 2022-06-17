@@ -15,7 +15,6 @@ sagaMiddleware.run(rootSaga);
 
 render(
   <Provider store={store}>
-    
     <App />
   </Provider>,
   document.getElementById("root")

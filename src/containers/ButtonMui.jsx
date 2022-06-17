@@ -11,17 +11,17 @@ import { MenuItem } from "@mui/material";
 const lodash = require("lodash");
 
 export default function ButtonMui() {
-  const dispatch = useDispatch();
   const [category, setCategory] = useState("");
   const [country, setCountry] = useState("");
-
+  const dispatch = useDispatch();
+  
   function handleCategory(event) {
     setCategory(event.target.value);
   }
   const handleCountry = (event) => {
     setCountry(event.target.value);
   };
-
+  
   useEffect(() => {
     dispatch(getNews(category, country));
   }, [category, country]);

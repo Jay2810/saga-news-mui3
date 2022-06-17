@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -8,8 +8,12 @@ import { Button, CardActionArea, CardActions } from "@mui/material";
 import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 
-let NewsItem = ({ loading, news }) =>
-  loading ? null : news ? (
+export default function NewsItem() {
+
+let loading = useSelector(state=>state.loading)
+let news = useSelector(state=>state.news)
+  if(loading) {return null} 
+  if(news){ return (
     <div>
       {/* <Stack direction="row" > */}
       <br />
@@ -70,15 +74,8 @@ let NewsItem = ({ loading, news }) =>
           );
         })}
       </Grid>
-      {/* </Stack> */}
     </div>
-  ) : null;
+  )} 
+  return null;
+}
 
-const mapStateToProps = (state) => ({
-  news: state.news,
-  loading: state.loading,
-});
-
-NewsItem = connect(mapStateToProps, null)(NewsItem);
-
-export default NewsItem;
