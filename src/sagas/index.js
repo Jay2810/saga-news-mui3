@@ -3,7 +3,7 @@ import { put, takeLatest, all } from "redux-saga/effects";
 function* fetchNews(data) {
   console.log("saga", data);
 
-  var apiKey = "98ca664fea53405da9ed702bcd23a217";
+  var apiKey = "01ff8d3745ff4d05baa5f43cc76cad29";
   if (data.query) {
     var url = `https://newsapi.org/v2/everything?q=${data.query}&apiKey=${apiKey}`;
   } else {
